@@ -1,0 +1,18 @@
+<h1>かけざん</h1>
+
+<%= @left %> × <%= @right %>　＝
+
+<%= form_with url: "/multiplication_answer" do |f| %>
+    <%= f.text_field :multiplication_answer %>
+    <%= hidden_field_tag :left,@left %>
+    <%= hidden_field_tag :right,@right %>
+    <%= f.submit "こたえ"%>
+
+<% end %>
+
+
+<p><%= link_to "たしざん", "/plus" %></p>
+
+<%= link_to "かけざんへ", "/multiplication" %>
+
+<p><%= link_to "top", "/" %></p>
